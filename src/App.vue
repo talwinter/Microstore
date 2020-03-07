@@ -31,7 +31,4 @@ export default {
   color: #2c3e50;
   background:#e6f500
 }
-.titleColor{
-  background:#EE3A3A
-}
 </style>
