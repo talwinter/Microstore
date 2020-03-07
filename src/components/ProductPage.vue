@@ -15,7 +15,6 @@
         <b-row> 
           <b-col cols=12>
             <b-card class="font">
-              <!-- <b-card-header class="font-weight-bold border-bottom-0"></b-card-header> -->
               <h4>Images</h4>
               <b-card-body class="b-0">
               <b-row>
@@ -33,7 +32,6 @@
         <b-row class="mt-4 mb-4"> 
           <b-col cols=12>
             <b-card>
-              <!-- <b-card-header class="font-weight-bold border-bottom-0">Attributes</b-card-header> -->
               <h4>Attributes</h4>
               <b-row>
                 <b-col v-bind:key="attr.id" v-for="attr in productData.attributes">
@@ -41,7 +39,6 @@
                     <b-row v-bind:key="label.id" v-for="label in attr.labels">
                       <b-form-group>
                         <b-col class="font-weight-normal">
-                        <!-- <input type="radio" :name="attr.id" v-on:click="chooseAttribute($event, attr.id,label.id, attr.title)"> -->
                           <b-form-radio :name="attr.id" :value="label.id" v-on:change="chooseAttribute($event, attr.id,label.id, attr.title)">{{label.title}}</b-form-radio>
                         </b-col>
                       </b-form-group>
@@ -53,11 +50,6 @@
             </b-card>
           </b-col>
         </b-row>
-        <!-- <b-row>
-          <b-col>
-            <button @click="showVariant()">Show Variants</button>
-          </b-col>
-        </b-row> -->
 
         <!-- Variants -->
         <b-row v-if="variants.length == 0" class="mt-4 mb-4">
@@ -95,7 +87,6 @@
         </b-row>
       </b-col>
     </b-card>
-
   </b-container>
 </template>
 
@@ -112,7 +103,6 @@ export default {
       Attributes: new Array(),
       ProductFound: false
     }
-    
   },
   mounted() {
     var queryString = window.location.search.substring(1).split('&')
@@ -163,6 +153,7 @@ export default {
         this.AddToAttributeList(attrId, labelId, attrTitle)
       }
     },
+
     AddToAttributeList(attrId, labelId, attrTitle){
         var attribute = new Attribute
         attribute.AttributeID = attrId
@@ -204,7 +195,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
